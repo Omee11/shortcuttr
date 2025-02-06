@@ -7,8 +7,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
         
-        // Construct the shortcuts URL
-        const shortcutsUrl = `shortcuts://run-shortcut?name=NotionDatabases&code=${code}`;
+        // Construct shortcuts URL WITH the code as input
+        const shortcutsUrl = `shortcuts://run-shortcut?name=NotionDatabases&input=code:${code}`;
         
         // Redirect immediately
         window.location.replace(shortcutsUrl);
