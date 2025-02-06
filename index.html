@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to Shortcuts...</title>
+    <script>
+        // Get the code from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        
+        // Construct the shortcuts URL
+        const shortcutsUrl = `shortcuts://run-shortcut?name=NotionDatabases&code=${code}`;
+        
+        // Redirect immediately
+        window.location.replace(shortcutsUrl);
+    </script>
+</head>
+<body>
+    <p>Redirecting to Shortcuts...</p>
+</body>
+</html>
