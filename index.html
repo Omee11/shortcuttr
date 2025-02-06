@@ -7,8 +7,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
 
-        // Strip any "code:" prefix if present and ensure we only pass the actual code
-        const cleanCode = code.replace('code:', '');
+        // Remove any "code:" prefix by taking everything after the colon if it exists
+        const cleanCode = code.includes(':') ? code.split(':')[1] : code;
         
         // Use the working URL scheme format with clean code
         const shortcutsUrl = `shortcuts://run-shortcut?name=NotionDatabases&input=text&text=${cleanCode}`;
